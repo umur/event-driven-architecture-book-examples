@@ -7,7 +7,7 @@ Authors: Umur Inan, Muhyidean AlTarawneh
 Book source repository:
 
 ```text
-https://github.com/umur/event-driven-architecture
+https://github.com/umur/eda-kafka-spring-boot
 ```
 
 ## What This Repo Is
