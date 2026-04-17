@@ -4,12 +4,6 @@ This repository contains runnable code examples for the book **Event-Driven Arch
 
 Authors: Umur Inan, Muhyidean AlTarawneh
 
-Book source repository:
-
-```text
-https://github.com/umur/eda-kafka-spring-boot
-```
-
 ## What This Repo Is
 
 - Multi-module Maven build.
