@@ -1,0 +1,35 @@
+# Maven / build output
+**/target/
+*.class
+
+# Logs
+*.log
+logs/
+
+# IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.vscode/
+.project
+.classpath
+.settings/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*~
+*.swp
+
+# Local env / secrets
+.env
+.env.*
+
+# Local tooling state
+.omc/
+**/.omc/
+
+# Docker local overrides
+**/docker-compose.override.yml
