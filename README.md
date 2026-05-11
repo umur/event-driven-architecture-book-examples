@@ -2,11 +2,19 @@
 
 > Patterns, pitfalls, and production realities of building event-driven systems.
 
+![Java](https://img.shields.io/badge/Java-21-ED8B00?logo=openjdk&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.0-6DB33F?logo=spring&logoColor=white) ![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-4.0-231F20?logo=apachekafka&logoColor=white) ![License: MIT](https://img.shields.io/badge/License%3A_MIT-MIT-blue)
+
 Companion code for the book **Event-Driven Architecture with Spring Boot 4.x and Kafka 4.x** by [Umur Inan](https://umurinan.com) and Muhyidean AlTarawneh.
 
 ## About the book
 
 A deep-dive into building reliable event-driven systems with Apache Kafka 4 and Spring Boot 4. CQRS, event sourcing, sagas, the outbox pattern, idempotent consumers, schema evolution, observability — every pattern backed by runnable Spring Boot examples, with the failure modes and remediation paths spelled out.
+
+## Prerequisites
+
+- Java 21 LTS ([Temurin](https://adoptium.net))
+- Maven 3.9+
+- Docker & Docker Compose (Kafka, Postgres)
 
 ## Quick start
 
