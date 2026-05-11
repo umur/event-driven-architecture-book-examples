@@ -21,7 +21,7 @@ public class OrderEventHandler {
 
     private static final Logger log = LoggerFactory.getLogger(OrderEventHandler.class);
 
-    // Exposed for test assertions — stores the last-seen event per orderId.
+    // Exposed for test assertions: stores the last-seen event per orderId.
     final ConcurrentHashMap<String, OrderEvent> processedOrders = new ConcurrentHashMap<>();
 
     @KafkaListener(topics = "orders", groupId = "order-handler")

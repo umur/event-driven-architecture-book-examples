@@ -61,7 +61,7 @@ class TestTraceCaptureTest {
     }
 
     @Nested
-    @DisplayName("onMessage — traceparent header present")
+    @DisplayName("onMessage: traceparent header present")
     class HeaderPresent {
 
         @Test
@@ -101,7 +101,7 @@ class TestTraceCaptureTest {
     }
 
     @Nested
-    @DisplayName("onMessage — traceparent header absent")
+    @DisplayName("onMessage: traceparent header absent")
     class HeaderAbsent {
 
         @Test

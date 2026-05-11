@@ -53,7 +53,7 @@ class SagaTimeoutHandlerTest {
     @Test
     @DisplayName("checkForTimeouts() does not mark a PAYMENT_PROCESSING saga created 10s ago as FAILED")
     void checkForTimeouts_doesNotMarkRecentSaga() {
-        // The repository query filters by cutoff time — nothing is returned for a fresh saga.
+        // The repository query filters by cutoff time: nothing is returned for a fresh saga.
         when(repository.findByStateAndCreatedAtBefore(
                 eq(SagaState.PAYMENT_PROCESSING.name()), any(Instant.class)))
                 .thenReturn(List.of());

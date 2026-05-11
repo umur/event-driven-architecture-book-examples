@@ -148,7 +148,7 @@ public class OrderSagaOrchestrator {
                     saga.getId(), saga.getId(), saga.getPaymentTransactionId(), UUID.randomUUID());
             kafkaTemplate.send(PAYMENT_COMMANDS, saga.getId(), refund);
 
-            log.warn("SAGA inventory failed sagaId={} — compensating, reason={}", saga.getId(), reply.errorMessage());
+            log.warn("SAGA inventory failed sagaId={}: compensating, reason={}", saga.getId(), reply.errorMessage());
         }
 
         ack.acknowledge();
@@ -167,7 +167,7 @@ public class OrderSagaOrchestrator {
             log.info("SAGA completed sagaId={}", saga.getId());
         } else {
             saga.setState(SagaState.COMPENSATING.name());
-            log.warn("SAGA shipment failed sagaId={} — marking COMPENSATING, reason={}", saga.getId(), reply.errorMessage());
+            log.warn("SAGA shipment failed sagaId={}: marking COMPENSATING, reason={}", saga.getId(), reply.errorMessage());
         }
 
         repository.save(saga);

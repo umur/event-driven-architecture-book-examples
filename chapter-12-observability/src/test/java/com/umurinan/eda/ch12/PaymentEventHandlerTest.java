@@ -63,7 +63,7 @@ class PaymentEventHandlerTest {
     }
 
     @Nested
-    @DisplayName("onOrderEvent — acknowledgment")
+    @DisplayName("onOrderEvent: acknowledgment")
     class AcknowledgmentBehavior {
 
         @Test
@@ -101,7 +101,7 @@ class PaymentEventHandlerTest {
     }
 
     @Nested
-    @DisplayName("onOrderEvent — trace context access")
+    @DisplayName("onOrderEvent: trace context access")
     class TraceContextAccess {
 
         @Test
@@ -133,7 +133,7 @@ class PaymentEventHandlerTest {
     }
 
     @Nested
-    @DisplayName("onOrderEvent — payload handling")
+    @DisplayName("onOrderEvent: payload handling")
     class PayloadHandling {
 
         @Test

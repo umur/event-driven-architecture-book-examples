@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>chapter-12-observability</artifactId>
-    <name>Chapter 12 — Observability with OpenTelemetry</name>
+    <name>Chapter 12: Observability with OpenTelemetry</name>
 
     <dependencies>
         <dependency>

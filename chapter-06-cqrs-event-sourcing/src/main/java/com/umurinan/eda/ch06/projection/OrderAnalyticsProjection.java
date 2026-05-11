@@ -59,7 +59,7 @@ public class OrderAnalyticsProjection {
         summary.incrementOrder(event.total());
         repository.save(summary);
 
-        log.debug("OrderAnalyticsProjection: updated daily summary for {} — count={}, revenue={}",
+        log.debug("OrderAnalyticsProjection: updated daily summary for {}: count={}, revenue={}",
                 date, summary.getOrderCount(), summary.getTotalRevenue());
     }
 }

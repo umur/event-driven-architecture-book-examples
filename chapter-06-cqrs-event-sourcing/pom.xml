@@ -12,7 +12,7 @@
     </parent>
 
     <artifactId>chapter-06-cqrs-event-sourcing</artifactId>
-    <name>Chapter 06 — CQRS + Event Sourcing Combined</name>
+    <name>Chapter 06: CQRS + Event Sourcing Combined</name>
     <description>Event store as the write model; three independent consumer groups each build their own read model</description>
 
     <dependencies>

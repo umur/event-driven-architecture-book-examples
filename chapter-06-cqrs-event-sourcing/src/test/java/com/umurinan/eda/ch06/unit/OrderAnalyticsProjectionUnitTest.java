@@ -102,7 +102,7 @@ class OrderAnalyticsProjectionUnitTest {
 
     @Test
     void orderPlacedEvent_dateIsDerivedFromOccurredAt() throws Exception {
-        // occurredAt is in UTC — projection must derive 2024-03-10
+        // occurredAt is in UTC: projection must derive 2024-03-10
         var expectedDate = LocalDate.of(2024, 3, 10);
         when(repository.findById(expectedDate)).thenReturn(Optional.empty());
 

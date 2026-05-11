@@ -10,7 +10,7 @@ import static com.umurinan.eda.ch14.OrderRoutingPredicate.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Pure unit test for the routing predicate — zero Spring context, zero Kafka.
+ * Pure unit test for the routing predicate: zero Spring context, zero Kafka.
  *
  * This is the fastest test in the chapter: it runs in milliseconds and gives
  * immediate feedback on boundary conditions. Because OrderRoutingPredicate is

@@ -1,11 +1,11 @@
-# Chapter 08 — Consumer Lag Monitoring
+# Chapter 08: Consumer Lag Monitoring
 
 ## What is consumer lag?
 
 Consumer lag is the gap between the **latest offset** in a Kafka partition and
 the **current offset** of a consumer group. A lag of zero means the consumer is
 fully caught up. A growing lag means messages are arriving faster than the
-consumer can process them — a warning sign that needs an alert.
+consumer can process them: a warning sign that needs an alert.
 
 ```
 partition head  ────────────────────────────────► offset 1000
@@ -35,7 +35,7 @@ will grow.
 | Tags        | `container.id`, `group.id`              |
 | Source      | `records-lag-max` from Kafka client JMX |
 
-A value of `-1.0` means the consumer has not yet polled its first batch —
+A value of `-1.0` means the consumer has not yet polled its first batch : 
 this is normal during the first few seconds after startup.
 
 ## What to alert on

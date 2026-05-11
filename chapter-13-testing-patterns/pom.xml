@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>chapter-13-testing-patterns</artifactId>
-    <name>Chapter 13 — Testing Patterns for Event-Driven Systems</name>
+    <name>Chapter 13: Testing Patterns for Event-Driven Systems</name>
 
     <dependencies>
         <dependency>
@@ -23,7 +23,7 @@
             <artifactId>spring-kafka</artifactId>
         </dependency>
 
-        <!-- Jackson (optional transitive in spring-kafka — must be explicit) -->
+        <!-- Jackson (optional transitive in spring-kafka: must be explicit) -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>

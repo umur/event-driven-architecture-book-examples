@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @SpringBootTest
 @Transactional
-@DisplayName("DeduplicationConstraint — processed_events primary key enforces uniqueness")
+@DisplayName("DeduplicationConstraint: processed_events primary key enforces uniqueness")
 class DeduplicationConstraintTest {
 
     @Autowired

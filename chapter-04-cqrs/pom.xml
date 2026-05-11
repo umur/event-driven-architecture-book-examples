@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>chapter-04-cqrs</artifactId>
-    <name>Chapter 04 — CQRS</name>
+    <name>Chapter 04: CQRS</name>
     <description>Command Query Responsibility Segregation: separate write model (Product) and read model (ProductListing) kept in sync via Kafka events</description>
 
     <dependencies>
@@ -33,7 +33,7 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Jackson (optional transitive in spring-kafka — must be explicit) -->
+        <!-- Jackson (optional transitive in spring-kafka: must be explicit) -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>

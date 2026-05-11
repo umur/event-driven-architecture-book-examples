@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>chapter-10-idempotency</artifactId>
-    <name>Chapter 10 — Idempotency</name>
+    <name>Chapter 10: Idempotency</name>
     <description>Idempotency key + deduplication table: at-least-once delivery with exactly-once business logic</description>
 
     <dependencies>

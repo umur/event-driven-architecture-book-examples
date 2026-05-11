@@ -23,7 +23,7 @@ import static org.awaitility.Awaitility.await;
         "spring.kafka.bootstrap-servers=${spring.embedded.kafka.brokers}"
 })
 @DirtiesContext
-@DisplayName("CQRS integration — write side propagates to read model via Kafka")
+@DisplayName("CQRS integration: write side propagates to read model via Kafka")
 class CqrsIntegrationTest {
 
     @Autowired

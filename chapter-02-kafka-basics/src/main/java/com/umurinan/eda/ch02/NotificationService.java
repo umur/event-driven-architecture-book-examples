@@ -15,13 +15,13 @@ public class NotificationService {
     @KafkaListener(topics = "order-placed", groupId = "notification-service")
     public void onOrderPlaced(OrderPlaced event, Acknowledgment ack) {
         if (event.orderId() == null) {
-            throw new RuntimeException("orderId must not be null — cannot send notification");
+            throw new RuntimeException("orderId must not be null: cannot send notification");
         }
 
         log.info("Sending order confirmation to customerId={} for orderId={} total={}",
                 event.customerId(), event.orderId(), event.total());
 
-        // Stubbed email send — in production this would call an EmailClient
+        // Stubbed email send: in production this would call an EmailClient
         sendConfirmationEmail(event);
 
         ack.acknowledge();

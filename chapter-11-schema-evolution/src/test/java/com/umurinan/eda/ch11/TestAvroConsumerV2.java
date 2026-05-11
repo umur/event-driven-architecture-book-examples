@@ -32,7 +32,7 @@ public class TestAvroConsumerV2 {
             groupId = "avro-v2-test"
     )
     public void onMessage(byte[] payload) throws Exception {
-        // writer = V2 schema, reader = V2 schema — normal same-version path
+        // writer = V2 schema, reader = V2 schema: normal same-version path
         SpecificDatumReader<OrderPlacedV2> reader = new SpecificDatumReader<>(OrderPlacedV2.class);
         BinaryDecoder decoder = DecoderFactory.get().binaryDecoder(
                 new ByteArrayInputStream(payload), null);

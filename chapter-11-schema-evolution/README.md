@@ -1,4 +1,4 @@
-# Chapter 11 — Schema Evolution with Avro
+# Chapter 11: Schema Evolution with Avro
 
 ## What this module demonstrates
 
@@ -7,7 +7,7 @@ from now by consumers that may be running a newer version of the application.
 Schema evolution is the discipline of changing message formats without
 breaking existing consumers or producers.
 
-Apache Avro solves this with a binary encoding that carries no field names —
+Apache Avro solves this with a binary encoding that carries no field names : 
 only values in a schema-defined order. The reader resolves fields by comparing
 the *writer schema* (what produced the bytes) against the *reader schema*
 (what the current consumer expects). Avro fills in default values for fields
@@ -30,8 +30,8 @@ A V2 consumer reading V1 bytes gets `null` for `discountCode` automatically.
 
 ## What breaks compatibility
 
-* Adding a field **without** a default value — old consumers cannot fill it in.
-* Removing a field that has no default in the reader — the reader has no value
+* Adding a field **without** a default value: old consumers cannot fill it in.
+* Removing a field that has no default in the reader: the reader has no value
   to use when the field is absent from new writer bytes.
 * Changing a field's type to an incompatible type (e.g. `string` → `int`).
 
@@ -61,7 +61,7 @@ src/test/java/com/umurinan/eda/ch11/
 mvn test -pl chapter-11-schema-evolution
 ```
 
-No external dependencies — EmbeddedKafka starts an in-process broker.
+No external dependencies: EmbeddedKafka starts an in-process broker.
 
 ## Running against a real broker
 

@@ -1,4 +1,4 @@
-# Chapter 05 — Event Sourcing
+# Chapter 05: Event Sourcing
 
 ## What this demonstrates
 
@@ -7,20 +7,20 @@ Event sourcing inverts that: the system stores *what happened*, not what is. Eve
 recorded as an immutable domain event appended to the event store. To reconstruct an aggregate,
 you replay its history from the first event to the last.
 
-This module shows the core mechanics with no frameworks or special libraries — just plain Java,
+This module shows the core mechanics with no frameworks or special libraries: just plain Java,
 Spring JDBC, and Kafka.
 
 ## Key concepts
 
-**Event store** — an append-only log of domain events keyed by aggregate ID and sequence number.
+**Event store**: an append-only log of domain events keyed by aggregate ID and sequence number.
 A unique constraint on `(aggregate_id, sequence_number)` provides optimistic concurrency: if two
 writers race to append sequence 3, only one will succeed.
 
-**Aggregate rehydration** — `OrderAggregate.rehydrate(orderId, events)` creates a blank aggregate
+**Aggregate rehydration**: `OrderAggregate.rehydrate(orderId, events)` creates a blank aggregate
 and replays every stored event in order. The result is identical to the aggregate you would have
 obtained by applying each command individually.
 
-**State as a side-effect** — the aggregate never writes to a database directly. All writes go
+**State as a side-effect**: the aggregate never writes to a database directly. All writes go
 through `EventStore.append(...)`. The current state is always *derived* from the event log.
 
 ## Module structure
@@ -83,7 +83,7 @@ mvn spring-boot:run
 mvn test
 ```
 
-The `EventStoreTest` uses an in-memory H2 database — no Kafka required.
+The `EventStoreTest` uses an in-memory H2 database: no Kafka required.
 The `OrderAggregateTest` and `OrderCommandHandlerTest` are pure unit tests with zero I/O.
 
 ## What happens when you place an order

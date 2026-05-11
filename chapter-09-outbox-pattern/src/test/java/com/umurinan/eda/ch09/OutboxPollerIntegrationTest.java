@@ -25,7 +25,7 @@ import static org.awaitility.Awaitility.await;
         "spring.kafka.consumer.auto-offset-reset=earliest"
 })
 @DirtiesContext
-@DisplayName("OutboxPoller integration — relay publishes outbox messages to Kafka")
+@DisplayName("OutboxPoller integration: relay publishes outbox messages to Kafka")
 class OutboxPollerIntegrationTest {
 
     @Autowired

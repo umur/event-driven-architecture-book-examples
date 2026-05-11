@@ -24,7 +24,7 @@ public class SlowOrderConsumer {
         log.info("Processing: {}", payload);
 
         try {
-            // Artificial slow-down — this is the whole point of the example.
+            // Artificial slow-down: this is the whole point of the example.
             Thread.sleep(200);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

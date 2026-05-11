@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 /**
  * Pure routing function: given an order, return the destination topic name.
  *
- * This is intentionally a static utility — no Spring beans, no side effects,
+ * This is intentionally a static utility: no Spring beans, no side effects,
  * no I/O.  That makes it trivially unit-testable without standing up any
  * infrastructure.  All the interesting boundary cases live in
  * OrderRoutingPredicateTest.

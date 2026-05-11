@@ -14,7 +14,7 @@ import java.time.Instant;
 /**
  * Periodic sweep that detects sagas stuck in PAYMENT_PROCESSING.
  *
- * A saga can get stuck if the payment service never replies — for example due to
+ * A saga can get stuck if the payment service never replies: for example due to
  * a network partition or a crash in the participant. Rather than waiting forever,
  * this handler marks those sagas as FAILED after 30 seconds so downstream systems
  * (monitoring, customer support tooling) can react.
@@ -28,7 +28,7 @@ import java.time.Instant;
  * on {@code OrderSaga} enables optimistic locking: if a reply arrives and advances
  * the saga at the same instant the timeout fires, one of the two writers will get an
  * {@link ObjectOptimisticLockingFailureException}. When the timeout handler loses
- * that race, the exception is caught and logged at DEBUG level — this is expected,
+ * that race, the exception is caught and logged at DEBUG level: this is expected,
  * normal behaviour, not an error.
  */
 @Component
@@ -61,16 +61,16 @@ public class SagaTimeoutHandler {
 
         for (var saga : stale) {
             try {
-                log.warn("SAGA timeout detected sagaId={} createdAt={} — marking FAILED",
+                log.warn("SAGA timeout detected sagaId={} createdAt={}: marking FAILED",
                         saga.getId(), saga.getCreatedAt());
                 saga.setState(SagaState.FAILED.name());
                 repository.save(saga);
             } catch (ObjectOptimisticLockingFailureException e) {
                 // A Kafka listener thread updated this saga concurrently (e.g. a reply
                 // arrived at the same instant the timeout fired). The listener's write
-                // won. The saga is already in a valid terminal or next state — nothing
+                // won. The saga is already in a valid terminal or next state: nothing
                 // to do here.
-                log.debug("SAGA timeout lost optimistic-lock race sagaId={} — " +
+                log.debug("SAGA timeout lost optimistic-lock race sagaId={}: " +
                           "a concurrent reply already advanced the state; skipping",
                         saga.getId());
             }

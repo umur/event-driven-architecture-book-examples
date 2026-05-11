@@ -52,7 +52,7 @@ class OrderSagaOrchestratorTest {
     /**
      * Stubs kafkaTemplate.send() to return a completed future.
      * Called only inside tests that exercise a code path that publishes a command.
-     * Tests asserting that NO command is sent must NOT call this — Mockito strict
+     * Tests asserting that NO command is sent must NOT call this: Mockito strict
      * stubbing would flag the unused stub as an error.
      */
     private void stubKafkaSend() {
@@ -117,7 +117,7 @@ class OrderSagaOrchestratorTest {
     }
 
     // -------------------------------------------------------------------------
-    // handlePaymentReply — success path
+    // handlePaymentReply: success path
     // -------------------------------------------------------------------------
 
     @Test
@@ -189,13 +189,13 @@ class OrderSagaOrchestratorTest {
     }
 
     // -------------------------------------------------------------------------
-    // handlePaymentReply — failure path
+    // handlePaymentReply: failure path
     // -------------------------------------------------------------------------
 
     @Test
     @DisplayName("handlePaymentReply() with failure transitions saga to FAILED")
     void handlePaymentReply_failure_transitionsToFailed() {
-        // No stubKafkaSend() — the failure path must NOT publish any command.
+        // No stubKafkaSend(): the failure path must NOT publish any command.
         var saga = new OrderSaga("order-1");
         when(repository.findById("order-1")).thenReturn(Optional.of(saga));
         when(repository.save(any(OrderSaga.class))).thenAnswer(inv -> inv.getArgument(0));
@@ -212,7 +212,7 @@ class OrderSagaOrchestratorTest {
     @Test
     @DisplayName("handlePaymentReply() with failure does not publish any command")
     void handlePaymentReply_failure_doesNotPublishAnyCommand() {
-        // No stubKafkaSend() — Mockito strict mode would flag it as unnecessary if added.
+        // No stubKafkaSend(): Mockito strict mode would flag it as unnecessary if added.
         var saga = new OrderSaga("order-1");
         when(repository.findById("order-1")).thenReturn(Optional.of(saga));
         when(repository.save(any(OrderSaga.class))).thenAnswer(inv -> inv.getArgument(0));
@@ -226,7 +226,7 @@ class OrderSagaOrchestratorTest {
     }
 
     // -------------------------------------------------------------------------
-    // handleInventoryReply — success path
+    // handleInventoryReply: success path
     // -------------------------------------------------------------------------
 
     @Test
@@ -302,7 +302,7 @@ class OrderSagaOrchestratorTest {
     }
 
     // -------------------------------------------------------------------------
-    // handleInventoryReply — failure path
+    // handleInventoryReply: failure path
     // -------------------------------------------------------------------------
 
     @Test

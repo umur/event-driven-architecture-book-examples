@@ -190,7 +190,7 @@ class OrderDetailProjectionUnitTest {
         var placed = placedCaptor.getValue();
         assertThat(placed.getStatus()).isEqualTo("PLACED");
 
-        // Step 2: ship the order — simulate the record that would have been saved
+        // Step 2: ship the order: simulate the record that would have been saved
         var storedDetail = new OrderDetail("order-lifecycle", "cust-lifecycle", new BigDecimal("88.00"), "PLACED");
         when(repository.findById("order-lifecycle")).thenReturn(Optional.of(storedDetail));
 

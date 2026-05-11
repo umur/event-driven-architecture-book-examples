@@ -36,7 +36,7 @@ public class TestAvroConsumerV1Compat {
             groupId = "avro-v1-compat-test"
     )
     public void onMessage(byte[] payload) throws Exception {
-        // writer = V1 schema, reader = V2 schema — backward compatibility path
+        // writer = V1 schema, reader = V2 schema: backward compatibility path
         SpecificDatumReader<OrderPlacedV2> reader = new SpecificDatumReader<>(
                 OrderPlacedV1.getClassSchema(),
                 OrderPlacedV2.getClassSchema());

@@ -1,8 +1,8 @@
-# Chapter 14 — Adaptive Routing (Content-Based Router)
+# Chapter 14: Adaptive Routing (Content-Based Router)
 
 ## What this module demonstrates
 
-Content-based routing: an incoming event is inspected and forwarded to one of several downstream topics based on its payload. The routing decision is a pure function — no I/O, no Spring beans — which makes it trivially unit-testable.
+Content-based routing: an incoming event is inspected and forwarded to one of several downstream topics based on its payload. The routing decision is a pure function: no I/O, no Spring beans: which makes it trivially unit-testable.
 
 ---
 
@@ -28,7 +28,7 @@ assertThat(determineDestination(order("1000.00"))).isEqualTo(TOPIC_HIGH_VALUE);
 
 `OrderRoutingPredicateTest` covers every boundary value. If the thresholds change, the test suite catches the regression before the code reaches Kafka.
 
-The `OrderRouter` listener is kept deliberately thin: it calls the predicate, forwards to Kafka, and acknowledges. There is nothing in the router worth unit-testing in isolation — the interesting logic lives in the predicate.
+The `OrderRouter` listener is kept deliberately thin: it calls the predicate, forwards to Kafka, and acknowledges. There is nothing in the router worth unit-testing in isolation: the interesting logic lives in the predicate.
 
 ---
 
@@ -58,7 +58,7 @@ Then add a boundary-value test in `OrderRoutingPredicateTest`. The integration t
 
 | File | Pattern | Infrastructure |
 |---|---|---|
-| `OrderRoutingPredicateTest` | Boundary-value unit test | None — pure Java |
+| `OrderRoutingPredicateTest` | Boundary-value unit test | None: pure Java |
 | `ContentBasedRoutingIntegrationTest` | End-to-end routing verification | EmbeddedKafka + Awaitility |
 
 ---

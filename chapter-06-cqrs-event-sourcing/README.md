@@ -1,11 +1,11 @@
-# Chapter 06 — CQRS + Event Sourcing Combined
+# Chapter 06: CQRS + Event Sourcing Combined
 
 ## What this demonstrates
 
 This module combines two patterns that belong together but are often taught separately.
 
 **Event sourcing** provides the write model: every state change is stored as an event, never as a
-mutated row. There is no "orders" table holding the current state — only `order_events`.
+mutated row. There is no "orders" table holding the current state: only `order_events`.
 
 **CQRS** (Command Query Responsibility Segregation) keeps the read side separate. Domain events
 flow to Kafka. Three independent consumer groups each maintain their own read model, shaped
@@ -91,7 +91,7 @@ mvn spring-boot:run
 mvn test
 ```
 
-All three integration tests use `@EmbeddedKafka` — no external Kafka required.
+All three integration tests use `@EmbeddedKafka`: no external Kafka required.
 `@DirtiesContext` on each test class ensures the embedded broker is reset between test runs so
 consumer group offsets do not bleed across tests.
 

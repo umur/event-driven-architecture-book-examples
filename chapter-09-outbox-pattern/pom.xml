@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>chapter-09-outbox-pattern</artifactId>
-    <name>Chapter 09 — Outbox Pattern</name>
+    <name>Chapter 09: Outbox Pattern</name>
     <description>Transactional outbox: atomic write to DB + outbox table, relay poller publishes to Kafka</description>
 
     <dependencies>

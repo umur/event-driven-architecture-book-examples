@@ -42,7 +42,7 @@ import static org.mockito.Mockito.verify;
     "spring.kafka.consumer.auto-offset-reset=earliest"
 })
 @DirtiesContext
-@DisplayName("DuplicateDelivery — same message delivered twice results in exactly one charge")
+@DisplayName("DuplicateDelivery: same message delivered twice results in exactly one charge")
 @Disabled("Timing coordination - core logic tested in DeduplicationConstraintTest and IdempotentPaymentHandlerTest")
 class DuplicateDeliveryTest {
 
@@ -61,7 +61,7 @@ class DuplicateDeliveryTest {
         var idempotencyKey = UUID.randomUUID();
         var request = new PaymentRequest(idempotencyKey, "order-dup-1", new BigDecimal("99.00"));
 
-        // Publish the same message twice — simulates at-least-once delivery
+        // Publish the same message twice: simulates at-least-once delivery
         kafkaTemplate.send("payment-requests", idempotencyKey.toString(), request).get(5, TimeUnit.SECONDS);
         kafkaTemplate.send("payment-requests", idempotencyKey.toString(), request).get(5, TimeUnit.SECONDS);
 

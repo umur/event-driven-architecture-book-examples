@@ -26,7 +26,7 @@ import static org.awaitility.Awaitility.await;
  * Integration test for content-based routing end-to-end.
  *
  * Strategy:
- *   1. Publish three orders to orders-raw — one per tier.
+ *   1. Publish three orders to orders-raw: one per tier.
  *   2. OrderRouter consumes orders-raw and forwards each order to the
  *      correct destination topic based on total.
  *   3. Three listener beans defined in TestCaptureListeners (a static
@@ -39,7 +39,7 @@ import static org.awaitility.Awaitility.await;
  * instances rather than @KafkaListener directly on the test class?
  *
  * Spring processes @KafkaListener only on beans it manages. The test class
- * itself is not a Spring bean — it is instantiated by JUnit. A
+ * itself is not a Spring bean: it is instantiated by JUnit. A
  * @TestConfiguration inner class IS scanned as a configuration source by
  * @SpringBootTest, so beans declared there are fully managed and their
  * @KafkaListener annotations are processed normally.
@@ -61,7 +61,7 @@ import static org.awaitility.Awaitility.await;
 class ContentBasedRoutingIntegrationTest {
 
     // ---------------------------------------------------------------------------
-    // Test-only capture listeners — each listens to one destination topic and
+    // Test-only capture listeners: each listens to one destination topic and
     // stores the received message so the test method can assert against it.
     //
     // Declared as top-level static beans (not inner instances) so that Spring

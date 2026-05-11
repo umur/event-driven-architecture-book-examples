@@ -1,9 +1,9 @@
-# Chapter 07 — SAGAs (Orchestration)
+# Chapter 07: SAGAs (Orchestration)
 
 ## What this demonstrates
 
 An **orchestration SAGA** is a long-running transaction coordinator. A single
-component — the orchestrator — holds the entire workflow in its head, issues
+component: the orchestrator: holds the entire workflow in its head, issues
 commands to participant services one step at a time, and compensates if anything
 goes wrong. Participants are dumb: they do their job and reply. The intelligence
 lives in the orchestrator.
@@ -46,7 +46,7 @@ PENDING
 | SHIPMENT_SCHEDULING | ScheduleShipmentCommand sent, waiting for reply           |
 | COMPENSATING        | InventoryReply failed; RefundPaymentCommand sent          |
 | COMPLETED           | All three steps succeeded                                  |
-| FAILED              | Terminal failure — no further action taken by orchestrator |
+| FAILED              | Terminal failure: no further action taken by orchestrator |
 
 ---
 

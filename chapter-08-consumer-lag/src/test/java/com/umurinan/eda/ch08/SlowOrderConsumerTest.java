@@ -25,7 +25,7 @@ import static org.mockito.Mockito.verify;
  *       can detect and honour the interruption.</li>
  * </ol>
  *
- * The 200 ms artificial delay is not tested here — it is an intentional design
+ * The 200 ms artificial delay is not tested here: it is an intentional design
  * choice to demonstrate lag build-up, not application logic that needs
  * verification.
  */

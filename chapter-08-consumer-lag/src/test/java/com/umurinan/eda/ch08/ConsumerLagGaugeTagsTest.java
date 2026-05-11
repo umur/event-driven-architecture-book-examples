@@ -24,7 +24,7 @@ import static org.awaitility.Awaitility.await;
  * metric: the tag names and values must match what a Prometheus scraper or an
  * alerting rule would reference.
  *
- * No messages need to be published here — the gauge is registered on
+ * No messages need to be published here: the gauge is registered on
  * {@code ApplicationStartedEvent}, which fires as part of context startup, so the
  * metric is present as soon as the context is ready.
  */

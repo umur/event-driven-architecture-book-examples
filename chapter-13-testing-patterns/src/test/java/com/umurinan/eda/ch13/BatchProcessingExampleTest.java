@@ -23,7 +23,7 @@ import static org.awaitility.Awaitility.await;
  * In high-throughput systems consumers often process messages in batches
  * (spring.kafka.listener.type=batch) to amortise per-message overhead.
  * Testing batch consumers requires publishing multiple messages quickly and
- * then asserting that ALL of them were processed — not just the first one.
+ * then asserting that ALL of them were processed: not just the first one.
  *
  * This example uses the single-message handler (OrderEventHandler) to keep
  * the domain minimal, but the assertion pattern is identical for a batch

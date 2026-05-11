@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>chapter-08-consumer-lag</artifactId>
-    <name>Chapter 08 — Consumer Lag Monitoring</name>
+    <name>Chapter 08: Consumer Lag Monitoring</name>
     <description>Expose Kafka consumer lag as a Micrometer gauge so Prometheus can scrape
         and alert on it. A deliberately slow order consumer builds up lag to make the
         metric observable.</description>

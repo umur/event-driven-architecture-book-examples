@@ -35,7 +35,7 @@ import static org.awaitility.Awaitility.await;
  *   await().atMost(10, SECONDS).untilAsserted(() -> assertThat(...));
  *
  * If the condition is never satisfied, Awaitility reports the last assertion
- * error — which tells you exactly what the state was, not just "timed out".
+ * error: which tells you exactly what the state was, not just "timed out".
  */
 @SpringBootTest
 @EmbeddedKafka(partitions = 1, topics = {"orders", "orders.DLT"})
@@ -63,7 +63,7 @@ class EmbeddedKafkaExampleTest {
 
         // Awaitility keeps retrying the assertion until it passes or the
         // 10-second deadline is hit. No polling interval specified means it
-        // defaults to 100 ms — plenty of resolution for a local broker.
+        // defaults to 100 ms: plenty of resolution for a local broker.
         await()
                 .atMost(10, SECONDS)
                 .untilAsserted(() ->

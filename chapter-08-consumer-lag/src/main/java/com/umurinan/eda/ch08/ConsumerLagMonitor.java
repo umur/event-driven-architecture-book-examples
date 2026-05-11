@@ -24,8 +24,8 @@ import java.util.Map;
  * the maximum number of records behind the latest offset across all assigned
  * partitions for this consumer.
  *
- * <p>Gauges are registered on {@link ApplicationStartedEvent} — after listener
- * containers have been started by the registry — rather than in {@code @PostConstruct},
+ * <p>Gauges are registered on {@link ApplicationStartedEvent}: after listener
+ * containers have been started by the registry: rather than in {@code @PostConstruct},
  * which fires before the containers are running and would find an empty registry.
  *
  * <p>Because a Gauge reads its value lazily on every scrape, it always reflects
@@ -33,8 +33,8 @@ import java.util.Map;
  *
  * <p>Tags:
  * <ul>
- *   <li>{@code container.id} — the listener container id (e.g. "orders-0")</li>
- *   <li>{@code group.id}     — Kafka consumer group</li>
+ *   <li>{@code container.id}: the listener container id (e.g. "orders-0")</li>
+ *   <li>{@code group.id}    : Kafka consumer group</li>
  * </ul>
  */
 @Component

@@ -1,4 +1,4 @@
-# Chapter 13 — Testing Patterns for Event-Driven Systems
+# Chapter 13: Testing Patterns for Event-Driven Systems
 
 ## What this module demonstrates
 
@@ -47,7 +47,7 @@ await()
     .untilAsserted(() -> assertThat(handler.processedOrders).containsKey(orderId));
 ```
 
-When the deadline is hit without the condition being satisfied, Awaitility reports the last assertion failure — not a generic timeout message.
+When the deadline is hit without the condition being satisfied, Awaitility reports the last assertion failure: not a generic timeout message.
 
 ---
 

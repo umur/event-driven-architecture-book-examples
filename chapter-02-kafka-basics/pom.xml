@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>chapter-02-kafka-basics</artifactId>
-    <name>Chapter 02 — Kafka Basics</name>
+    <name>Chapter 02: Kafka Basics</name>
     <description>KafkaTemplate, @KafkaListener, DefaultErrorHandler, Dead Letter Topics</description>
 
     <dependencies>
@@ -24,7 +24,7 @@
             <artifactId>spring-kafka</artifactId>
         </dependency>
 
-        <!-- Jackson (optional transitive in spring-kafka — must be explicit) -->
+        <!-- Jackson (optional transitive in spring-kafka: must be explicit) -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>

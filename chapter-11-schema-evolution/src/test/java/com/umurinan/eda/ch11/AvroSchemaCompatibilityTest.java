@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  *
  * Key rule: schema compatibility checks in Avro require the reader and writer
  * to share the same full record name.  In production, schemas evolve in-place
- * (same name, same namespace) — version numbers live in the Schema Registry
+ * (same name, same namespace): version numbers live in the Schema Registry
  * metadata, not in the record name.  These tests use a single canonical name
  * "OrderPlaced" to demonstrate what "backward compatible" means structurally.
  *
@@ -25,7 +25,7 @@ class AvroSchemaCompatibilityTest {
 
     private static final String NAMESPACE = "com.umurinan.eda.ch11.avro";
 
-    // Base schema — the V1 shape that is "already in production"
+    // Base schema: the V1 shape that is "already in production"
     private static final String V1_JSON = """
             {
               "namespace": "com.umurinan.eda.ch11.avro",
@@ -40,7 +40,7 @@ class AvroSchemaCompatibilityTest {
             }
             """;
 
-    // V2 adds discountCode with a null default — backward compatible
+    // V2 adds discountCode with a null default: backward compatible
     private static final String V2_WITH_DEFAULT_JSON = """
             {
               "namespace": "com.umurinan.eda.ch11.avro",
@@ -56,7 +56,7 @@ class AvroSchemaCompatibilityTest {
             }
             """;
 
-    // V2 adds discountCode WITHOUT a default — NOT backward compatible
+    // V2 adds discountCode WITHOUT a default: NOT backward compatible
     private static final String V2_NO_DEFAULT_JSON = """
             {
               "namespace": "com.umurinan.eda.ch11.avro",
@@ -72,7 +72,7 @@ class AvroSchemaCompatibilityTest {
             }
             """;
 
-    // Schema that drops customerId — reading old V1 data with this reader
+    // Schema that drops customerId: reading old V1 data with this reader
     // fails: the writer produced customerId bytes, reader has no field for it
     // and there is no aliases/default resolution path.
     private static final String MISSING_FIELD_JSON = """

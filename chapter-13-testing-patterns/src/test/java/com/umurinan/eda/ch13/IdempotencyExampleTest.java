@@ -22,20 +22,20 @@ import static org.awaitility.Awaitility.await;
  *
  * Kafka's at-least-once delivery guarantee means a message can arrive more
  * than once: during a rebalance, after a consumer restart, or when an offset
- * is committed late.  Consumers must be idempotent — processing the same
+ * is committed late.  Consumers must be idempotent: processing the same
  * message twice must produce the same outcome as processing it once.
  *
  * Testing strategy:
  *   1. Publish the SAME OrderEvent (same orderId) twice.
  *   2. Wait until the orderId appears in processedOrders (first delivery handled).
- *   3. Assert it appears EXACTLY ONCE — the handler's containsKey guard
+ *   3. Assert it appears EXACTLY ONCE: the handler's containsKey guard
  *      prevented the duplicate from being re-processed.
  *
  * This test makes the idempotency contract explicit and executable.
  * If someone removes the duplicate check from OrderEventHandler, this test
  * will still pass unless the second delivery causes a visible side-effect.
  * A more thorough variant would count how many times a downstream call was
- * made — see the book discussion on spy-based idempotency tests.
+ * made: see the book discussion on spy-based idempotency tests.
  */
 @SpringBootTest
 @EmbeddedKafka(partitions = 1, topics = {"orders", "orders.DLT"})
@@ -70,7 +70,7 @@ class IdempotencyExampleTest {
                         assertThat(handler.processedOrders).containsKey(orderId)
                 );
 
-        // Give the second message a moment to be consumed — we are asserting
+        // Give the second message a moment to be consumed: we are asserting
         // absence, so we need a short stabilisation wait.
         // Awaitility's conditionEvaluationListener could be used here too, but
         // a simple fixed poll period keeps the example readable.
@@ -80,7 +80,7 @@ class IdempotencyExampleTest {
                 .untilAsserted(() ->
                         // The map stores at most one entry per orderId.
                         // If idempotency were broken the value might differ or a
-                        // counter somewhere would show 2 — this assertion is the
+                        // counter somewhere would show 2: this assertion is the
                         // simplest form of the contract.
                         assertThat(handler.processedOrders).hasSize(1)
                 );

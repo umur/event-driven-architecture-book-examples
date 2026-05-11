@@ -18,7 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Round-trip serialization tests using the Avro-generated Java classes.
- * No Spring context, no Kafka broker — purely in-process byte encoding.
+ * No Spring context, no Kafka broker: purely in-process byte encoding.
  */
 class AvroSerializationTest {
 
@@ -52,7 +52,7 @@ class AvroSerializationTest {
     }
 
     private OrderPlacedV2 deserializeV2FromV1Bytes(byte[] v1Bytes) throws Exception {
-        // Use the V1 schema as writer, V2 schema as reader — this is the
+        // Use the V1 schema as writer, V2 schema as reader: this is the
         // backward-compatibility path that Avro's ResolvingGrammar handles.
         SpecificDatumReader<OrderPlacedV2> reader = new SpecificDatumReader<>(
                 OrderPlacedV1.getClassSchema(),   // writer schema (what produced the bytes)
@@ -93,7 +93,7 @@ class AvroSerializationTest {
     }
 
     @Test
-    @DisplayName("V1 bytes deserialized with V2 reader — discountCode is null (backward compat)")
+    @DisplayName("V1 bytes deserialized with V2 reader: discountCode is null (backward compat)")
     void v1BytesDeserializedByV2ReaderHasNullDiscountCode() throws Exception {
         var v1Event = OrderPlacedV1.newBuilder()
                 .setOrderId("ORD-002")

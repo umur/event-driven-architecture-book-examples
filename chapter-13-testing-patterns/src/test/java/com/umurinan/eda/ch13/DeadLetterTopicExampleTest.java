@@ -26,14 +26,14 @@ import static org.awaitility.Awaitility.await;
  * When a listener throws an unchecked exception, Spring Kafka's
  * DefaultErrorHandler retries the message according to the configured BackOff.
  * After the retries are exhausted the DeadLetterPublishingRecoverer writes the
- * original message — headers and payload intact — to a topic named
+ * original message: headers and payload intact: to a topic named
  * "{original-topic}.DLT".
  *
  * Testing strategy:
  *   1. Publish a message that will always fail (orderId == null triggers
  *      IllegalArgumentException in OrderEventHandler).
  *   2. Subscribe to orders.DLT with a @KafkaListener defined in a nested
- *      @TestConfiguration class — this is essential. The test class itself
+ *      @TestConfiguration class: this is essential. The test class itself
  *      is not a Spring bean, so a @KafkaListener declared directly on it
  *      is never registered. A @TestConfiguration inner class IS a bean.
  *   3. Use Awaitility to wait until the DLT listener captures the message.
@@ -56,8 +56,8 @@ class DeadLetterTopicExampleTest {
      * A proper Spring bean that holds the captured DLT message.
      *
      * The @KafkaListener annotation is only processed when placed on a method
-     * of a Spring-managed bean. Putting it here — inside a @TestConfiguration
-     * class — guarantees registration. The AtomicReference is then injected
+     * of a Spring-managed bean. Putting it here: inside a @TestConfiguration
+     * class: guarantees registration. The AtomicReference is then injected
      * into the test via @Autowired so the test method can assert against it.
      */
     @TestConfiguration

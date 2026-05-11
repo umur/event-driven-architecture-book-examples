@@ -64,7 +64,7 @@ class HeaderCapturingConsumerTest {
     }
 
     @Nested
-    @DisplayName("onMessage — header present")
+    @DisplayName("onMessage: header present")
     class HeaderPresent {
 
         @Test
@@ -91,7 +91,7 @@ class HeaderCapturingConsumerTest {
     }
 
     @Nested
-    @DisplayName("onMessage — header absent")
+    @DisplayName("onMessage: header absent")
     class HeaderAbsent {
 
         @Test

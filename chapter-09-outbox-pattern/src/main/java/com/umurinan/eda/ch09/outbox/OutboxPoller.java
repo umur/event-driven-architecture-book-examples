@@ -45,7 +45,7 @@ public class OutboxPoller {
             } catch (TimeoutException e) {
                 log.error("Kafka send timed out for outbox message id={} type={} topic={}",
                         message.getId(), message.getEventType(), topic);
-                // (4) do not mark published — retry on next poll
+                // (4) do not mark published: retry on next poll
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 log.warn("Interrupted while publishing outbox message id={}", message.getId());
@@ -53,7 +53,7 @@ public class OutboxPoller {
             } catch (ExecutionException e) {
                 log.error("Failed to publish outbox message id={} type={} topic={}: {}",
                         message.getId(), message.getEventType(), topic, e.getCause().getMessage());
-                // (6) continue to next message — one failure does not block the rest
+                // (6) continue to next message: one failure does not block the rest
             }
         }
     }

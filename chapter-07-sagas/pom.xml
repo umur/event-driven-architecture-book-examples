@@ -11,7 +11,7 @@
     </parent>
 
     <artifactId>chapter-07-sagas</artifactId>
-    <name>Chapter 07 — SAGAs (Orchestration)</name>
+    <name>Chapter 07: SAGAs (Orchestration)</name>
     <description>Orchestration SAGA: OrderSagaOrchestrator drives a multi-step distributed
         transaction across payment, inventory, and shipment services with state persistence
         and compensation on failure.</description>
@@ -35,7 +35,7 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Jackson (optional transitive in spring-kafka — must be explicit) -->
+        <!-- Jackson (optional transitive in spring-kafka: must be explicit) -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>

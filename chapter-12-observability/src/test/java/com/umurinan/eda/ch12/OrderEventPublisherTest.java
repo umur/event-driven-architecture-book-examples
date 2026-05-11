@@ -29,7 +29,7 @@ import static org.mockito.Mockito.when;
  * Unit tests for {@link OrderEventPublisher}.
  *
  * The real Micrometer {@code Tracer.nextSpan()} returns a {@code Span} whose
- * {@code name()} and {@code start()} methods also return {@code Span} — there
+ * {@code name()} and {@code start()} methods also return {@code Span}: there
  * is no separate {@code Span.Builder} in the fluent chain used by the
  * publisher.  All Kafka and tracing collaborators are mocked so these tests
  * run without an embedded broker or a Spring application context.
@@ -79,7 +79,7 @@ class OrderEventPublisherTest {
     }
 
     @Nested
-    @DisplayName("publishOrderPlaced — span lifecycle")
+    @DisplayName("publishOrderPlaced: span lifecycle")
     class SpanLifecycle {
 
         @Test
@@ -131,7 +131,7 @@ class OrderEventPublisherTest {
             try {
                 publisher.publishOrderPlaced("order-fail");
             } catch (RuntimeException ignored) {
-                // expected — we only care that span.end() was still called
+                // expected: we only care that span.end() was still called
             }
 
             verify(span).end();
@@ -139,7 +139,7 @@ class OrderEventPublisherTest {
     }
 
     @Nested
-    @DisplayName("publishOrderPlaced — Kafka message")
+    @DisplayName("publishOrderPlaced: Kafka message")
     class KafkaMessage {
 
         @Test

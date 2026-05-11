@@ -1,11 +1,11 @@
-# Chapter 12 — Observability with OpenTelemetry
+# Chapter 12: Observability with OpenTelemetry
 
 ## What this module demonstrates
 
 A distributed system is only as observable as the worst-instrumented service
 in a request path. When an order flows from an HTTP handler through Kafka into
 a payment service, you need a single thread you can pull on to see everything
-that happened — across process boundaries, across the network, across time.
+that happened: across process boundaries, across the network, across time.
 
 That thread is the **trace ID**.
 
@@ -95,4 +95,4 @@ always records error traces regardless of the rate.
 Deploy `OrderEventPublisher` and `PaymentEventHandler` as separate Spring Boot
 applications. As long as both have `micrometer-tracing-bridge-otel` on the
 classpath and point to the same OTLP endpoint, traces will stitch together
-automatically — no code changes required.
+automatically: no code changes required.

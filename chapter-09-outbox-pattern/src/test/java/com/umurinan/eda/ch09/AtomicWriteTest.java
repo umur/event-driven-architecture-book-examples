@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-@DisplayName("AtomicWrite — Order and OutboxMessage share the same transaction")
+@DisplayName("AtomicWrite: Order and OutboxMessage share the same transaction")
 class AtomicWriteTest {
 
     @Autowired
@@ -46,7 +46,7 @@ class AtomicWriteTest {
         assertThat(outboxRepository.findByPublishedAtIsNullOrderByCreatedAtAsc())
                 .anyMatch(m -> m.getAggregateId().equals(order.getId().toString()));
 
-        // After @Rollback the test framework rolls back — verified by the absence of records
+        // After @Rollback the test framework rolls back: verified by the absence of records
         // in subsequent independent test runs. Within this method we assert both are visible,
         // confirming they were written in a single unit of work that is now about to be undone.
         assertThat(orderRepository.count()).isPositive();

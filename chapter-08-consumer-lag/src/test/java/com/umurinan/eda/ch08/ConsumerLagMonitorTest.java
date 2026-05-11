@@ -34,8 +34,8 @@ import static org.mockito.Mockito.when;
  * tested in isolation:
  *
  * <ol>
- *   <li>Gauge registration — one gauge per container with correct tags.</li>
- *   <li>Lag reading — the {@code readLag} method, exercised indirectly through
+ *   <li>Gauge registration: one gauge per container with correct tags.</li>
+ *   <li>Lag reading: the {@code readLag} method, exercised indirectly through
  *       the gauge's value supplier.</li>
  * </ol>
  *
@@ -166,7 +166,7 @@ class ConsumerLagMonitorTest {
     }
 
     // -------------------------------------------------------------------------
-    // Lag reading — driven through the gauge value supplier
+    // Lag reading: driven through the gauge value supplier
     // -------------------------------------------------------------------------
 
     @Nested

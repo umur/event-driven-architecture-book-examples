@@ -45,7 +45,7 @@ public class OrderService {
                     "Kafka send failed for orderId=" + command.orderId(), e.getCause());
         } catch (TimeoutException e) {
             throw new OrderProcessingException(                                   // (3)
-                    "Kafka unavailable — send timed out for orderId=" + command.orderId(), e);
+                    "Kafka unavailable: send timed out for orderId=" + command.orderId(), e);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             throw new OrderProcessingException(                                   // (4)

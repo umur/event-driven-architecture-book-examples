@@ -28,8 +28,8 @@ import static org.awaitility.Awaitility.await;
  *
  * Two separate topics are used to keep the two evolution scenarios isolated:
  *
- *   order-placed-v1-compat  — V1 bytes read with a V2 reader (backward compat)
- *   order-placed-v2         — V2 bytes read with a V2 reader (same version)
+ *   order-placed-v1-compat : V1 bytes read with a V2 reader (backward compat)
+ *   order-placed-v2        : V2 bytes read with a V2 reader (same version)
  *
  * Raw byte[] serialization avoids any Confluent Schema Registry dependency so
  * the tests run entirely in-process with EmbeddedKafka.
@@ -63,7 +63,7 @@ class AvroKafkaIntegrationTest {
     }
 
     @Test
-    @DisplayName("V1 bytes consumed by V2 reader — discountCode is null (backward compat)")
+    @DisplayName("V1 bytes consumed by V2 reader: discountCode is null (backward compat)")
     void v1MessageConsumedAsV2() throws Exception {
         var v1Event = OrderPlacedV1.newBuilder()
                 .setOrderId("ORD-INT-001")
@@ -83,12 +83,12 @@ class AvroKafkaIntegrationTest {
         assertThat(received.getOrderId().toString()).isEqualTo("ORD-INT-001");
         assertThat(received.getCustomerId().toString()).isEqualTo("CUST-INT-01");
         assertThat(received.getTotal()).isEqualTo(75.50);
-        // V1 data carries no discountCode — V2 reader fills it in with null default
+        // V1 data carries no discountCode: V2 reader fills it in with null default
         assertThat(received.getDiscountCode()).isNull();
     }
 
     @Test
-    @DisplayName("V2 bytes consumed by V2 reader — discountCode is preserved")
+    @DisplayName("V2 bytes consumed by V2 reader: discountCode is preserved")
     void v2MessageConsumedWithDiscountCode() throws Exception {
         var v2Event = OrderPlacedV2.newBuilder()
                 .setOrderId("ORD-INT-002")

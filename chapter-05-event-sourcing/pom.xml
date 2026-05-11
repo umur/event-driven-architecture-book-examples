@@ -12,7 +12,7 @@
     </parent>
 
     <artifactId>chapter-05-event-sourcing</artifactId>
-    <name>Chapter 05 — Event Sourcing</name>
+    <name>Chapter 05: Event Sourcing</name>
     <description>Event sourcing with an append-only event store and aggregate rehydration</description>
 
     <dependencies>

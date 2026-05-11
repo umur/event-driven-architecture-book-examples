@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
  * Content-based router: reads orders from orders-raw, inspects the total,
  * then forwards to the appropriate downstream topic.
  *
- * The routing logic itself lives in {@link OrderRoutingPredicate} — a pure
- * function — so it can be unit-tested independently of the Kafka wiring.
+ * The routing logic itself lives in {@link OrderRoutingPredicate}: a pure
+ * function: so it can be unit-tested independently of the Kafka wiring.
  */
 @Service
 public class OrderRouter {

@@ -1,4 +1,4 @@
-# Chapter 09 — Outbox Pattern
+# Chapter 09: Outbox Pattern
 
 ## The dual-write problem
 
@@ -30,7 +30,7 @@ The fix is to treat the event as data. Instead of sending to Kafka directly, the
 
 ## Relay mechanism
 
-`OutboxPoller` runs every 500 ms. It loads all rows where `published_at IS NULL`, ordered by `created_at`. For each row it calls `kafkaTemplate.send()` then stamps `published_at`. The query-and-stamp is itself wrapped in a transaction, so a crash mid-poll simply leaves the row unpublished and the poller retries on the next tick — giving at-least-once delivery to Kafka.
+`OutboxPoller` runs every 500 ms. It loads all rows where `published_at IS NULL`, ordered by `created_at`. For each row it calls `kafkaTemplate.send()` then stamps `published_at`. The query-and-stamp is itself wrapped in a transaction, so a crash mid-poll simply leaves the row unpublished and the poller retries on the next tick: giving at-least-once delivery to Kafka.
 
 ## Running the tests
 
@@ -38,6 +38,6 @@ The fix is to treat the event as data. Instead of sending to Kafka directly, the
 mvn test -pl chapter-09-outbox-pattern
 ```
 
-- `OutboxRepositoryTest` — `@DataJpaTest`, verifies the repository query and ordering
-- `AtomicWriteTest` — `@SpringBootTest`, verifies both records are written in one unit of work
-- `OutboxPollerIntegrationTest` — `@SpringBootTest @EmbeddedKafka`, end-to-end relay verification
+- `OutboxRepositoryTest`: `@DataJpaTest`, verifies the repository query and ordering
+- `AtomicWriteTest`: `@SpringBootTest`, verifies both records are written in one unit of work
+- `OutboxPollerIntegrationTest`: `@SpringBootTest @EmbeddedKafka`, end-to-end relay verification

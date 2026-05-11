@@ -19,7 +19,7 @@ import static org.awaitility.Awaitility.await;
  * Verifies that the consumer lag gauge is registered in the Micrometer registry
  * after messages have been published to the "orders" topic.
  *
- * The test only asserts that the gauge *exists* — not its current numeric value.
+ * The test only asserts that the gauge *exists*: not its current numeric value.
  * Lag magnitude depends on scheduling timing, which makes it non-deterministic in
  * a test environment. What matters for this chapter is that the metric is wired up
  * and visible to a scraper such as Prometheus.
@@ -44,7 +44,7 @@ class ConsumerLagMetricsTest {
     @DisplayName("kafka.consumer.lag.current gauge is registered after messages are published")
     void lagGauge_isRegisteredAfterMessagesPublished() throws InterruptedException {
         // Send 20 messages rapidly. The consumer sleeps 200 ms per message so
-        // it cannot keep up — lag will build, but the test only checks registration.
+        // it cannot keep up: lag will build, but the test only checks registration.
         for (int i = 0; i < 20; i++) {
             kafkaTemplate.send("orders", "key-" + i, "order-payload-" + i);
         }
