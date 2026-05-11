@@ -10,8 +10,8 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>chapter-03-kafka-basics</artifactId>
-    <name>Chapter 03 — Kafka Basics</name>
+    <artifactId>chapter-02-kafka-basics</artifactId>
+    <name>Chapter 02 — Kafka Basics</name>
     <description>KafkaTemplate, @KafkaListener, DefaultErrorHandler, Dead Letter Topics</description>
 
     <dependencies>

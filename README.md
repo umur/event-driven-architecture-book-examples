@@ -34,7 +34,7 @@ mvn -pl chapter-07-sagas -am spring-boot:run
 
 | Module | Topic |
 |---|---|
-| `chapter-03-kafka-basics` | KafkaTemplate, @KafkaListener, DLTs |
+| `chapter-02-kafka-basics` | KafkaTemplate, @KafkaListener, DLTs |
 | `chapter-04-cqrs` | CQRS (write model + projection) |
 | `chapter-05-event-sourcing` | Event sourcing fundamentals |
 | `chapter-06-cqrs-event-sourcing` | CQRS + event sourcing together |

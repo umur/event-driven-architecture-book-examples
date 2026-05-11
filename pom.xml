@@ -13,7 +13,7 @@
     <description>Event-Driven Architecture with Spring Boot 4.x and Kafka 4.x — code examples</description>
 
     <modules>
-        <module>chapter-03-kafka-basics</module>
+        <module>chapter-02-kafka-basics</module>
         <module>chapter-04-cqrs</module>
         <module>chapter-05-event-sourcing</module>
         <module>chapter-06-cqrs-event-sourcing</module>
