@@ -1,4 +1,4 @@
-package com.umurinan.eda.ch03;
+package com.umurinan.eda.ch02;
 
 import java.math.BigDecimal;
 import java.time.Instant;

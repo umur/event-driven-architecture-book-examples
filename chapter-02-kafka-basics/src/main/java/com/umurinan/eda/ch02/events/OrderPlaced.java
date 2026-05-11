@@ -1,4 +1,4 @@
-package com.umurinan.eda.ch03.events;
+package com.umurinan.eda.ch02.events;
 
 import java.math.BigDecimal;
 import java.time.Instant;

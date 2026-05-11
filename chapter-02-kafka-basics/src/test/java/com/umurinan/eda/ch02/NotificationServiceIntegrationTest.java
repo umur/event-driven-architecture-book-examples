@@ -1,6 +1,6 @@
-package com.umurinan.eda.ch03;
+package com.umurinan.eda.ch02;
 
-import com.umurinan.eda.ch03.events.OrderPlaced;
+import com.umurinan.eda.ch02.events.OrderPlaced;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

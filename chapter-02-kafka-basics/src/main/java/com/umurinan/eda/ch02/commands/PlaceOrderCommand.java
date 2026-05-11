@@ -1,4 +1,4 @@
-package com.umurinan.eda.ch03.commands;
+package com.umurinan.eda.ch02.commands;
 
 import java.math.BigDecimal;
 

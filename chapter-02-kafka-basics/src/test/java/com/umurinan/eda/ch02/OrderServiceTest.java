@@ -1,7 +1,7 @@
-package com.umurinan.eda.ch03;
+package com.umurinan.eda.ch02;
 
-import com.umurinan.eda.ch03.commands.PlaceOrderCommand;
-import com.umurinan.eda.ch03.events.OrderPlaced;
+import com.umurinan.eda.ch02.commands.PlaceOrderCommand;
+import com.umurinan.eda.ch02.events.OrderPlaced;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

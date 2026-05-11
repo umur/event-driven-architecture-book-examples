@@ -1,8 +1,8 @@
-package com.umurinan.eda.ch03.config;
+package com.umurinan.eda.ch02.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.umurinan.eda.ch03.events.OrderPlaced;
+import com.umurinan.eda.ch02.events.OrderPlaced;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -85,7 +85,7 @@ public class KafkaConfig {
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, autoOffsetReset);
         props.put(ConsumerConfig.GROUP_PROTOCOL_CONFIG, "classic");
         var deserializer = new JsonDeserializer<>(OrderPlaced.class, objectMapper);
-        deserializer.addTrustedPackages("com.umurinan.eda.ch03.events");
+        deserializer.addTrustedPackages("com.umurinan.eda.ch02.events");
         return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), deserializer);
     }
 
