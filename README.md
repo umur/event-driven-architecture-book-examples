@@ -8,7 +8,7 @@ Companion code for the book **Event-Driven Architecture with Spring Boot 4.x and
 
 ## About the book
 
-A deep-dive into building reliable event-driven systems with Apache Kafka 4 and Spring Boot 4. CQRS, event sourcing, sagas, the outbox pattern, idempotent consumers, schema evolution, observability — every pattern backed by runnable Spring Boot examples, with the failure modes and remediation paths spelled out.
+A deep-dive into building reliable event-driven systems with Apache Kafka 4 and Spring Boot 4. CQRS, event sourcing, sagas, the outbox pattern, idempotent consumers, schema evolution, observability. Every pattern backed by runnable Spring Boot examples, with the failure modes and remediation paths spelled out.
 
 ## Prerequisites
 
@@ -31,18 +31,18 @@ Chapter 2 brings up a single-broker KRaft Kafka cluster on `localhost:9092`. All
 
 Multi-module Maven build. Each `chapter-XX-topic/` module is a self-contained Spring Boot project:
 
-- `chapter-02-kafka-basics` — Kafka fundamentals, KafkaTemplate, @KafkaListener, DLTs
-- `chapter-04-cqrs` — CQRS write-side / read-side split
-- `chapter-05-event-sourcing` — event sourcing fundamentals
-- `chapter-06-cqrs-event-sourcing` — combined CQRS + ES
-- `chapter-07-sagas` — saga orchestration
-- `chapter-08-consumer-lag` — measuring lag and the consistency window
-- `chapter-09-outbox-pattern` — transactional outbox
-- `chapter-10-idempotency` — idempotent consumers and deduplication
-- `chapter-11-schema-evolution` — Avro and schema evolution patterns
-- `chapter-12-observability` — tracing, logging, and metrics
-- `chapter-13-testing-patterns` — testing event-driven systems
-- `chapter-14-adaptive-routing` — routing, cache coherence, and adaptive patterns
+- `chapter-02-kafka-basics`: Kafka fundamentals, KafkaTemplate, @KafkaListener, DLTs
+- `chapter-04-cqrs`: CQRS write-side / read-side split
+- `chapter-05-event-sourcing`: event sourcing fundamentals
+- `chapter-06-cqrs-event-sourcing`: combined CQRS + ES
+- `chapter-07-sagas`: saga orchestration
+- `chapter-08-consumer-lag`: measuring lag and the consistency window
+- `chapter-09-outbox-pattern`: transactional outbox
+- `chapter-10-idempotency`: idempotent consumers and deduplication
+- `chapter-11-schema-evolution`: Avro and schema evolution patterns
+- `chapter-12-observability`: tracing, logging, and metrics
+- `chapter-13-testing-patterns`: testing event-driven systems
+- `chapter-14-adaptive-routing`: routing, cache coherence, and adaptive patterns
 
 ## Stack
 
@@ -61,4 +61,4 @@ I'm Umur Inan. I write books about Spring Boot, Java, distributed systems, and t
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).
