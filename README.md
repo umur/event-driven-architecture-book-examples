@@ -1,52 +1,56 @@
-# Event-Driven Architecture Book Examples
+# Event-Driven Architecture with Spring Boot 4 & Kafka 4
 
-This repository contains runnable code examples for the book **Event-Driven Architecture with Spring Boot 4.x and Kafka 4.x**.
+> Patterns, pitfalls, and production realities of building event-driven systems.
 
-Authors: Umur Inan, Muhyidean AlTarawneh
+Companion code for the book **Event-Driven Architecture with Spring Boot 4.x and Kafka 4.x** by [Umur Inan](https://umurinan.com) and Muhyidean AlTarawneh.
 
-## What This Repo Is
+## About the book
 
-- Multi-module Maven build.
-- Each `chapter-XX-*` module is a focused Spring Boot project (or demo) for that chapter.
-- Runtime dependencies vary by chapter; see the module `README.md` for details.
+A deep-dive into building reliable event-driven systems with Apache Kafka 4 and Spring Boot 4. CQRS, event sourcing, sagas, the outbox pattern, idempotent consumers, schema evolution, observability — every pattern backed by runnable Spring Boot examples, with the failure modes and remediation paths spelled out.
 
-## Prerequisites
-
-- Java 21+
-- Maven 3.9+
-- Docker (only for chapters that start Kafka and other services via Docker Compose)
-
-## Quick Start
-
-Build all modules:
+## Quick start
 
 ```bash
-mvn -q -DskipTests package
+git clone https://github.com/umur/event-driven-architecture-book-examples
+cd event-driven-architecture-book-examples/chapter-02-kafka-basics
+docker-compose up -d
+mvn spring-boot:run
 ```
 
-Run a single module:
+Chapter 2 brings up a single-broker KRaft Kafka cluster on `localhost:9092`. All subsequent chapter modules connect to that broker.
 
-```bash
-mvn -pl chapter-07-sagas -am spring-boot:run
-```
+## Layout
 
-## Modules
+Multi-module Maven build. Each `chapter-XX-topic/` module is a self-contained Spring Boot project:
 
-| Module | Topic |
-|---|---|
-| `chapter-02-kafka-basics` | KafkaTemplate, @KafkaListener, DLTs |
-| `chapter-04-cqrs` | CQRS (write model + projection) |
-| `chapter-05-event-sourcing` | Event sourcing fundamentals |
-| `chapter-06-cqrs-event-sourcing` | CQRS + event sourcing together |
-| `chapter-07-sagas` | Sagas (orchestration) |
-| `chapter-08-consumer-lag` | Lag measurement + consistency window |
-| `chapter-09-outbox-pattern` | Transactional outbox |
-| `chapter-10-idempotency` | Idempotent consumers + deduplication |
-| `chapter-11-schema-evolution` | Schema evolution patterns |
-| `chapter-12-observability` | Tracing/logging/metrics patterns |
-| `chapter-13-testing-patterns` | Testing event-driven systems |
-| `chapter-14-adaptive-routing` | Routing/cache/coherence patterns |
+- `chapter-02-kafka-basics` — Kafka fundamentals, KafkaTemplate, @KafkaListener, DLTs
+- `chapter-04-cqrs` — CQRS write-side / read-side split
+- `chapter-05-event-sourcing` — event sourcing fundamentals
+- `chapter-06-cqrs-event-sourcing` — combined CQRS + ES
+- `chapter-07-sagas` — saga orchestration
+- `chapter-08-consumer-lag` — measuring lag and the consistency window
+- `chapter-09-outbox-pattern` — transactional outbox
+- `chapter-10-idempotency` — idempotent consumers and deduplication
+- `chapter-11-schema-evolution` — Avro and schema evolution patterns
+- `chapter-12-observability` — tracing, logging, and metrics
+- `chapter-13-testing-patterns` — testing event-driven systems
+- `chapter-14-adaptive-routing` — routing, cache coherence, and adaptive patterns
+
+## Stack
+
+- Java 21 (LTS)
+- Spring Boot 4.0.6
+- Spring Kafka
+- Apache Kafka 4.0 (KRaft mode)
+- H2 in-memory database (for chapters that need persistence)
+- Testcontainers + spring-kafka-test for integration tests
+
+## About the author
+
+I'm Umur Inan. I write books about Spring Boot, Java, distributed systems, and the practices that make production reliable.
+
+📚 **More writing and books → [umurinan.com](https://umurinan.com)**
 
 ## License
 
-MIT. See `LICENSE`.
+MIT — see [LICENSE](LICENSE).
