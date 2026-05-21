@@ -1,0 +1,10 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: content-indexer
+      auto-offset-reset: earliest
+      properties:
+        group.protocol: classic
+    listener:
+      ack-mode: manual

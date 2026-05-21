@@ -1,0 +1,12 @@
+{
+  "namespace": "com.umurinan.eda.ch11.avro",
+  "type": "record",
+  "name": "OrderPlacedV2",
+  "fields": [
+    {"name": "orderId",      "type": "string"},
+    {"name": "customerId",   "type": "string"},
+    {"name": "total",        "type": "double"},
+    {"name": "placedAt",     "type": "long", "logicalType": "timestamp-millis"},
+    {"name": "discountCode", "type": ["null", "string"], "default": null}
+  ]
+}
