@@ -4,7 +4,7 @@
 
 ![Java](https://img.shields.io/badge/Java-21-ED8B00?logo=openjdk&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.0-6DB33F?logo=spring&logoColor=white) ![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-4.0-231F20?logo=apachekafka&logoColor=white) ![License: MIT](https://img.shields.io/badge/License%3A_MIT-MIT-blue)
 
-Companion code for **Event-Driven Architecture with Spring Boot 4.x and Kafka 4.x** by [Umur Inan](https://umurinan.com) and Muhyidean AlTarawneh.
+Companion code for **Event-Driven Architecture with Spring Boot 4.x and Kafka 4.x** by [Umur Inan](https://umurinan.com) 
 
 ## About the book
 
